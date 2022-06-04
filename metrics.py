@@ -8,7 +8,7 @@ from sklearn.metrics import (
 
 
 def metrics_report(clf, X_test, y_test):
-    y_score = clf.predict_proba(X_test)
+    y_score = clf.predict_proba(X_test)[:,1]
     y_pred = clf.predict(X_test)
     return {
         'accuracy_score': accuracy_score(y_test, y_pred),
